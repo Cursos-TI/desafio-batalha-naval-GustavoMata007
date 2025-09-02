@@ -1,0 +1,35 @@
+README.md
+
+#include <stdio.h>   // biblioteca para printf
+
+#define TAM 5        // tamanho do tabuleiro (5x5)
+
+int main() {
+    int tabuleiro[TAM][TAM] = {0}; // cria o tabuleiro vazio (cheio de 0)
+
+    // --- NAVIO HORIZONTAL ---
+    // Linha 1, colunas 0 até 2
+    for (int j = 0; j < 3; j++) {
+        tabuleiro[1][j] = 1;
+    }
+
+    // --- NAVIO VERTICAL ---
+    // Coluna 3, linhas 2 até 4
+    for (int i = 2; i < 5; i++) {
+        tabuleiro[i][3] = 1;
+    }
+
+    // --- EXIBINDO AS COORDENADAS ---
+    printf("Coordenadas dos navios:\n");
+    for (int i = 0; i < TAM; i++) {
+        for (int j = 0; j < TAM; j++) {
+            if (tabuleiro[i][j] == 1) {
+                printf("(%d, %d)\n", i, j);
+            }
+        }
+    }
+
+    return 0;
+}
+
+./batalha_naval
